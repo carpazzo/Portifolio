@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body,
+html {
+  margin: 0;
+}
+body {
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+}
+header {
+  position: absolute;
+  padding: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  background: #f9f9f9;
+
+  nav {
+    padding-left: 30px;
+    font-size: 1.2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      padding: 1em;
+      font-size: 1.3rem;
+    }
+    .active {
+      background-color: #b7c1e9;
+      overflow: hidden;
+    }
+  }
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+
+  section {
+    padding: 3em;
+
+    h1,
+    h2 {
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+  section.main {
+    background: url("../images/main.jpg");
+    background-size: cover;
+    padding-top: 6em;
+
+    h1 {
+      font-size: 1.3rem;
+      padding-left: 0.7em;
+    }
+    p {
+      width: 60%;
+      padding-left: 0.7em;
+    }
+  }
+  section.about {
+    background: url("../images/aboutback.jpg");
+    background-size: cover;
+    padding-top: 6em;
+    .aboutinner {
+      background-color: white;
+      padding: 2em;
+    }
+  }
+
+  section.projects {
+    background: url("../images/mobilecrop.jpg");
+    background-size: cover;
+    padding-top: 6em;
+  }
+  section.sidebar {
+    background-color: #b7c1e9;
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .imgme {
+    width: 250px;
+    height: 250px;
+  }
+  section.contact {
+    background-color: #beb9b9;
+  }
+  .blackbox {
+    background-color: black;
+    padding: 1em;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    width: calc(100% - 2em);
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  .site {
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 2px 3px 2px 3px;
+    text-decoration: none;
+    background-color: #a3d7e4;
+    margin-left: 1em;
+  }
+  .repo {
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 2px;
+    text-decoration: none;
+    background-color: #9a93bb;
+    margin-left: 2em;
+  }
+  .projects {
+    p {
+      font-size: 22px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  header {
+    background: white;
+    width: auto;
+  }
+
+  .wrapper {
+    grid-template-columns: 70% auto;
+    grid-template-rows: 60% auto;
+    grid-template-areas:
+      "main sidebar"
+      "main contact";
+    height: 100vh;
+  }
+  section.main {
+    grid-area: main;
+    .maininner {
+      padding-left: 120px;
+      font-size: 2em;
+      width: 75%;
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+  section.about {
+    grid-area: main;
+  }
+  section.projects {
+    grid-area: main;
+  }
+  section.sidebar {
+    grid-area: sidebar;
+  }
+  section.contact {
+    grid-area: contact;
+    margin-top: -18px;
+    padding: 20px;
+  }
+  section {
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+  }
+}
