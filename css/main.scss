@@ -9,15 +9,14 @@ body {
 }
 header {
   position: absolute;
-  padding: 1em;
   z-index: 20;
   display: flex;
   justify-content: space-between;
   background: #f9f9f9;
+  width: 100vw;
 
   nav {
-    padding-left: 30px;
-    font-size: 1.2rem;
+    padding: 5px;
   }
 
   a {
@@ -33,12 +32,15 @@ header {
     padding: 0;
 
     li a {
-      padding: 1em;
-      font-size: 1.3rem;
+      //padding: 7px;
+      margin-left: 10px;
+      font-size: 1.2rem;
     }
     .active {
-      background-color: #b7c1e9;
-      overflow: hidden;
+      background-color: #797b8562;
+      padding: 4px;
+      font-size: 1.4rem;
+      border-radius: 1px;
     }
   }
 }
@@ -72,13 +74,15 @@ header {
   section.about {
     background: url("../images/aboutback.jpg");
     background-size: cover;
-    padding-top: 6em;
     .aboutinner {
       background-color: white;
-      padding: 2em;
+      padding: 4px;
     }
   }
-
+  section.designproj {
+    background-color: #797b8562;
+    padding-top: 6em;
+  }
   section.projects {
     background: url("../images/mobilecrop.jpg");
     background-size: cover;
@@ -131,55 +135,74 @@ header {
       font-size: 22px;
     }
   }
+  .design {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .sample {
+      width: 10rem;
+      height: 10rem;
+      margin-bottom: 20px;
+      transition: 0.5s;
+    }
+    .sample:hover {
+      transform: scale(1.8);
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
   html {
     font-size: 18px;
   }
-}
-@media only screen and (min-width: 1020px) {
-  header {
-    background: white;
-    width: auto;
-  }
 
-  .wrapper {
-    grid-template-columns: 70% auto;
-    grid-template-rows: 60% auto;
-    grid-template-areas:
-      "main sidebar"
-      "main contact";
-    height: 100vh;
-  }
-  section.main {
-    grid-area: main;
-    .maininner {
-      padding-left: 120px;
-      font-size: 2em;
-      width: 75%;
-      h1 {
-        font-size: 40px;
+  @media only screen and (min-width: 1020px) {
+    header {
+      background: white;
+      width: 100vw;
+    }
+
+    .wrapper {
+      grid-template-columns: 70% auto;
+      grid-template-rows: 60% auto;
+      grid-template-areas:
+        "main sidebar"
+        "main contact";
+      height: 100vh;
+    }
+    section.main {
+      grid-area: main;
+      .maininner {
+        padding-left: 120px;
+        font-size: 2em;
+        width: 75%;
+        h1 {
+          font-size: 40px;
+        }
       }
     }
-  }
-  section.about {
-    grid-area: main;
-  }
-  section.projects {
-    grid-area: main;
-  }
-  section.sidebar {
-    grid-area: sidebar;
-  }
-  section.contact {
-    grid-area: contact;
-    margin-top: -18px;
-    padding: 20px;
-  }
-  section {
-    display: grid;
-    grid-template-rows: auto;
-    align-items: center;
+    section.about {
+      grid-area: main;
+    }
+    section.projects {
+      grid-area: main;
+    }
+    section.designproj {
+      grid-area: main;
+    }
+    section.sidebar {
+      grid-area: sidebar;
+    }
+    section.contact {
+      grid-area: contact;
+      margin-top: -18px;
+      padding: 20px;
+    }
+    section {
+      display: grid;
+      grid-template-rows: auto;
+      align-items: center;
+    }
   }
 }

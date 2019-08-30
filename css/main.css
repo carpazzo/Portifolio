@@ -11,7 +11,6 @@ body {
 
 header {
   position: absolute;
-  padding: 1em;
   z-index: 20;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,11 +19,11 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: #f9f9f9;
+  width: 100vw;
 }
 
 header nav {
-  padding-left: 30px;
-  font-size: 1.2rem;
+  padding: 5px;
 }
 
 header a {
@@ -44,13 +43,15 @@ header nav ul {
 }
 
 header nav ul li a {
-  padding: 1em;
-  font-size: 1.3rem;
+  margin-left: 10px;
+  font-size: 1.2rem;
 }
 
 header nav ul .active {
-  background-color: #b7c1e9;
-  overflow: hidden;
+  background-color: #797b8562;
+  padding: 4px;
+  font-size: 1.4rem;
+  border-radius: 1px;
 }
 
 .wrapper {
@@ -89,12 +90,16 @@ header nav ul .active {
 .wrapper section.about {
   background: url("../images/aboutback.jpg");
   background-size: cover;
-  padding-top: 6em;
 }
 
 .wrapper section.about .aboutinner {
   background-color: white;
-  padding: 2em;
+  padding: 4px;
+}
+
+.wrapper section.designproj {
+  background-color: #797b8562;
+  padding-top: 6em;
 }
 
 .wrapper section.projects {
@@ -155,16 +160,39 @@ header nav ul .active {
   font-size: 22px;
 }
 
+.wrapper .design {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wrapper .design .sample {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.wrapper .design .sample:hover {
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+}
+
 @media only screen and (min-width: 768px) {
   html {
     font-size: 18px;
   }
 }
 
-@media only screen and (min-width: 1020px) {
+@media only screen and (min-width: 768px) and (min-width: 1020px) {
   header {
     background: white;
-    width: auto;
+    width: 100vw;
   }
   .wrapper {
     -ms-grid-columns: 70% auto;
@@ -195,6 +223,12 @@ header nav ul .active {
     grid-area: main;
   }
   section.projects {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: main;
+  }
+  section.designproj {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     -ms-grid-column: 1;
