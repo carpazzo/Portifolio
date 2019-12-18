@@ -50,7 +50,7 @@ header nav ul li a {
 header nav ul .active {
   background-color: #797b8562;
   padding: 4px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   border-radius: 1px;
 }
 
@@ -199,7 +199,8 @@ header nav ul .active {
         grid-template-columns: 70% auto;
     -ms-grid-rows: 60% auto;
         grid-template-rows: 60% auto;
-        grid-template-areas: "main sidebar" "main contact";
+        grid-template-areas: "main sidebar"
+ "main contact";
     height: 100vh;
   }
   section.main {
